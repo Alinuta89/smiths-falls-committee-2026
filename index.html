@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smiths Falls in national housing pressure data</title>
+<meta name="description" content="Delegation to the Smiths Falls Equity For All Committee, 21 October 2026. Alina Turner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F33; --midnight:#102A43; --slate:#1E3A5F; --ocean:#2C5282; --deep-teal:#0E8C86; --pine:#0B7770;
+  --teal:#0FB9B1; --aqua:#4FD1C5; --light-aqua:#7EDDD5; --pale:#E0F0EE; --mist:#EDF5F4; --azure:#336FB5;
+  --ink:#2D3748; --muted:#4A5568; --border:#E5E7EB; --page:#F9FAFB; --bg2:#F3F4F6;
+  --shadow-1:0 2px 12px rgba(11,31,51,.06); --shadow-2:0 4px 18px rgba(11,31,51,.10),0 1px 3px rgba(11,31,51,.06);
+  --shadow-3:0 12px 26px rgba(11,31,51,.14),0 2px 6px rgba(11,31,51,.08); --glow:0 0 12px rgba(15,185,177,.22);
+  --icon-gradient:linear-gradient(135deg,#336FB5,#3D9B96); --text-gradient:linear-gradient(135deg,#0B1F33,#0FB9B1);
+  --transition-fast:150ms cubic-bezier(.4,0,.2,1); --transition-base:200ms cubic-bezier(.4,0,.2,1); --transition-slow:300ms cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--page);color:var(--ink);font-family:'Lato',Arial,sans-serif;font-weight:400;overflow:hidden}
+.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;font-size:24px;line-height:1;display:inline-block;vertical-align:middle;-webkit-font-smoothing:antialiased}
+.gi{font-size:22px;background:var(--icon-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* ---- stage ---- */
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--page)}
+#frame{position:relative;width:1440px;height:810px;transform-origin:center center;background:#fff;box-shadow:var(--shadow-3);border-radius:12px;overflow:hidden}
+.slide{position:absolute;inset:0;display:none;padding:56px 72px;background:#fff}
+.slide.active{display:block}
+.slide.dark{background:var(--navy);color:#fff}
+.slide-body{position:relative;z-index:2;height:100%;display:flex;flex-direction:column}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);margin-bottom:10px}
+.dark .eyebrow{color:var(--aqua)}
+h1{font-size:46px;font-weight:700;line-height:1.12;color:var(--navy);max-width:1000px}
+.dark h1{color:#fff}
+h2{font-size:34px;font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:10px}
+.lede{font-size:18px;color:var(--muted);max-width:860px;line-height:1.5}
+.dark .lede{color:rgba(255,255,255,.72)}
+.grow{flex:1;display:flex;flex-direction:column;justify-content:center}
+.slide-body.top .grow{justify-content:flex-start;padding-top:40px}
+.foot{font-size:11.5px;color:var(--muted);margin-top:auto;padding-top:14px;line-height:1.45}
+.dark .foot{color:rgba(255,255,255,.55)}
+.foot b{font-weight:700;color:var(--slate)}
+.dark .foot b{color:rgba(255,255,255,.8)}
+
+/* ---- cards and numbers ---- */
+.card{background:#fff;border-radius:8px;box-shadow:var(--shadow-2);padding:22px 24px}
+.sl-num-hero{text-align:center;padding:10px 0 0}
+.sl-num-hero .v{font-size:150px;font-weight:700;line-height:1;background:var(--text-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sl-num-hero .l{font-size:20px;font-weight:700;color:var(--navy);margin-top:6px}
+.sl-num-hero .c{font-size:15px;color:var(--muted);margin-top:4px}
+.sl-num-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px}
+.num-item{background:#fff;border-radius:8px;box-shadow:var(--shadow-1);padding:18px 16px;text-align:center}
+.num-item .v{font-size:40px;font-weight:700;line-height:1.1;background:var(--text-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.num-item .l{font-size:13.5px;font-weight:700;color:var(--navy);margin-top:6px}
+.num-item .s{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.4}
+.sl-columns-2-1{display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:stretch}
+.sl-columns-2equal{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.sl-columns-1-2{display:grid;grid-template-columns:1fr 2fr;gap:28px;align-items:start}
+.chart-card{background:#fff;border-radius:8px;box-shadow:var(--shadow-2);padding:24px}
+.chart-title{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.chart-title h3{font-size:14px;font-weight:700;color:var(--navy)}
+.chart-canvas{position:relative;height:330px}
+.chart-canvas.short{height:250px}
+.side-stat{background:var(--mist);border-radius:8px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.side-stat .v{font-size:56px;font-weight:700;line-height:1;background:var(--text-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.side-stat .l{font-size:15px;font-weight:700;color:var(--navy)}
+.side-stat .s{font-size:13px;color:var(--muted);line-height:1.5}
+.callout{border-left:4px solid var(--teal);border-radius:0 8px 8px 0;background:linear-gradient(135deg,rgba(15,185,177,.05),rgba(11,31,51,.02));padding:16px 20px;font-size:15px;color:var(--ink);line-height:1.5}
+.callout b{color:var(--navy)}
+
+/* boxes with icons */
+.sl-boxes-icon{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.box{background:#fff;border-radius:8px;box-shadow:var(--shadow-1);padding:20px 22px;display:flex;flex-direction:column;gap:6px}
+.box .ib{width:40px;height:40px;border-radius:8px;background:var(--pale);display:flex;align-items:center;justify-content:center}
+.box .v{font-size:34px;font-weight:700;color:var(--navy);line-height:1.1}
+.box .t{font-size:14px;font-weight:700;color:var(--navy)}
+.box .d{font-size:12.5px;color:var(--muted);line-height:1.45}
+
+/* vertical sequence */
+.sl-seq-vertical{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:38px 56px}
+.seq-item{display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start}
+.seq-item .dot{width:34px;height:34px;border-radius:50%;background:var(--icon-gradient);box-shadow:var(--glow);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700}
+.seq-item .yr{font-size:15px;font-weight:700;color:var(--pine);letter-spacing:.04em}
+.seq-item .tt{font-size:20px;font-weight:700;color:var(--navy);line-height:1.3}
+.seq-item .dd{font-size:15.5px;color:var(--muted);line-height:1.5;margin-top:4px}
+
+/* two-column compare */
+.cmp{background:#fff;border-radius:8px;box-shadow:var(--shadow-2);padding:24px 26px;height:100%}
+.cmp h3{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:14px}
+.cmp ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.cmp li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:15px;line-height:1.45;color:var(--ink)}
+.cmp li .md{font-size:18px;color:var(--pine)}
+.cmp li b{color:var(--navy)}
+
+/* description bullets */
+.sl-bullets-description{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px}
+.desc{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start}
+.desc .ib{width:52px;height:52px;border-radius:8px;background:var(--pale);display:flex;align-items:center;justify-content:center}
+.desc .t{font-size:21px;font-weight:700;color:var(--navy)}
+.desc .d{font-size:16px;color:var(--muted);line-height:1.5;margin-top:4px}
+
+/* map slide */
+.map-wrap{position:absolute;inset:0;background:#fff}
+.map-wrap iframe{width:100%;height:100%;border:0;display:block}
+.map-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 300px 14px 72px;background:rgba(255,255,255,.92);display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:13px;color:var(--muted);z-index:3}
+.map-cap b{color:var(--navy);font-weight:700}
+.map-fallback{display:none;position:absolute;inset:0;background:#fff url('map-helpseeker.png') center top/contain no-repeat}
+
+/* motion backgrounds */
+.slide-motion-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.slide-motion-bg canvas{width:100%;height:100%;opacity:.2;will-change:transform}
+.slide-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0}
+.slide-orb-1{width:320px;height:320px;background:var(--teal);right:-60px;top:-80px;opacity:.09;animation:heroFloat1 12s ease-in-out infinite}
+.slide-orb-2{width:220px;height:220px;background:var(--aqua);left:-40px;bottom:-60px;opacity:.06;animation:heroFloat2 15s ease-in-out infinite}
+
+/* nav */
+#nav{position:fixed;right:24px;bottom:18px;display:flex;gap:8px;align-items:center;z-index:50}
+#nav button{font:700 13px 'Lato',Arial,sans-serif;border:0;border-radius:999px;padding:9px 16px;background:#fff;color:var(--pine);box-shadow:var(--shadow-1);cursor:pointer;transition:box-shadow var(--transition-fast),transform var(--transition-fast)}
+#nav button:hover{box-shadow:var(--shadow-2);transform:translateY(-1px)}
+#nav .idx{font-size:12px;color:var(--muted);padding:0 6px}
+#dots{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:7px;z-index:50}
+#dots i{width:8px;height:8px;border-radius:50%;background:var(--border);display:block;transition:background var(--transition-fast)}
+#dots i.on{background:var(--teal);box-shadow:var(--glow)}
+
+/* ---- keyframes ---- */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+@keyframes landUp{from{opacity:0;transform:scale(.85) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes heroFloat1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(15px,-25px) scale(1.05)}}
+@keyframes heroFloat2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12px,-18px) scale(1.04)}}
+.slide.active .a-fadeUp,.slide.active .a-fadeDown,.slide.active .a-slideRight,.slide.active .a-slideLeft,.slide.active .a-landUp,.slide.active .a-fadeIn{opacity:0}
+.slide.active.slide-entered .a-fadeUp{animation:fadeUp var(--dur,.55s) cubic-bezier(.25,.46,.45,.94) both;animation-delay:var(--d,0ms)}
+.slide.active.slide-entered .a-fadeDown{animation:fadeDown var(--dur,.45s) cubic-bezier(.25,.46,.45,.94) both;animation-delay:var(--d,0ms)}
+.slide.active.slide-entered .a-slideRight{animation:slideRight var(--dur,.5s) cubic-bezier(.25,.46,.45,.94) both;animation-delay:var(--d,0ms)}
+.slide.active.slide-entered .a-slideLeft{animation:slideLeft var(--dur,.5s) cubic-bezier(.25,.46,.45,.94) both;animation-delay:var(--d,0ms)}
+.slide.active.slide-entered .a-landUp{animation:landUp var(--dur,.6s) cubic-bezier(.25,.46,.45,.94) both;animation-delay:var(--d,0ms)}
+.slide.active.slide-entered .a-fadeIn{animation:fadeIn var(--dur,.5s) ease both;animation-delay:var(--d,0ms)}
+body.skip-animations [class*="a-"]{opacity:1!important;transform:none!important;animation:none!important}
+body.skip-animations .slide-orb,body.skip-animations .slide-motion-bg{display:none!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.slide-orb,.slide-motion-bg{display:none!important}[class*="a-"]{opacity:1!important;transform:none!important}}
+@media print{*{animation:none!important;opacity:1!important;transform:none!important}#stage{position:static}#frame{transform:none!important;box-shadow:none;width:100%;height:auto}.slide{display:block!important;position:relative;height:810px;page-break-after:always}.slide-orb,.slide-motion-bg,#nav,#dots{display:none!important}}
+
+/* drawer */
+details.drawer{background:#fff;border-radius:8px;box-shadow:var(--shadow-1);padding:0}
+details.drawer summary{list-style:none;cursor:pointer;padding:14px 18px;font-size:14px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:10px}
+details.drawer summary::-webkit-details-marker{display:none}
+details.drawer .db{padding:0 18px 16px;font-size:12.5px;color:var(--muted);line-height:1.55;columns:2;column-gap:32px}
+details.drawer .db p{break-inside:avoid;margin-bottom:8px}
+.dark details.drawer{background:rgba(255,255,255,.06)}
+.dark details.drawer summary{color:#fff}
+.dark details.drawer .db{color:rgba(255,255,255,.7)}
+.dark details.drawer .db b{color:#fff}
+.kicker-row{display:flex;gap:28px;align-items:center;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.75)}
+.kicker-row b{color:#fff;font-weight:700}
+</style>
+</head>
+<body>
+<div id="stage"><div id="frame">
+
+<!-- 1 TITLE -->
+<section class="slide dark" data-title="Title">
+  <div class="slide-motion-bg"><canvas class="mercury-canvas"></canvas></div>
+  <div class="slide-body">
+    <div class="grow">
+      <div class="eyebrow a-fadeDown" style="--d:0ms">Delegation to the Smiths Falls Equity For All Committee · 21 October 2026</div>
+      <h1 class="a-landUp" style="--d:150ms;font-size:60px">Smiths Falls in national housing pressure data</h1>
+      <p class="lede a-fadeUp" style="--d:350ms;margin-top:18px">What a national index sees in the town, what the Committee told me the index cannot see, and how far the provincial and federal record can take that question.</p>
+    </div>
+    <div class="kicker-row a-fadeUp" style="--d:550ms">
+      <span><b>Dr. Alina Turner</b> · Co-Founder &amp; CEO, HelpSeeker Technologies &amp; Fellow, School of Public Policy, University of Calgary</span>
+    </div>
+    <div class="foot a-fadeIn" style="--d:750ms">This is an independent academic project. The institutional dataset it draws on is published openly. Every figure in this deck carries its source and year in the final slide.</div>
+  </div>
+</section>
+
+<!-- 2 THE SCORE -->
+<section class="slide" data-title="The score">
+  <div class="slide-body">
+    <div class="eyebrow a-fadeDown">Where Smiths Falls lands</div>
+    <h2 class="a-fadeDown" style="--d:100ms">A town of nine thousand people, scoring where big-city markets score</h2>
+    <div class="grow">
+      <div class="sl-num-hero a-landUp" style="--d:250ms">
+        <div class="v" id="heroScore" data-target="99.6">0.0</div>
+        <div class="l">Housing Pressure Index, out of 100 · Extreme band</div>
+        <div class="c">Six pillars, 25 indicators, every Canadian census subdivision with data; index of June 2026 on 2021 Census, CMHC and HART inputs</div>
+      </div>
+      <div class="sl-num-row" style="margin-top:26px">
+        <div class="num-item a-fadeUp" style="--d:450ms"><div class="v">12</div><div class="l">of 4,533 communities scored nationally</div><div class="s">tied with Richmond, BC and Charlottetown; above 99.7 percent of all scored</div></div>
+        <div class="num-item a-fadeUp" style="--d:600ms"><div class="v">6</div><div class="l">of 345 mid-size communities</div><div class="s">population 10,000 to 49,999; above 98.3 percent of that tier</div></div>
+        <div class="num-item a-fadeUp" style="--d:750ms"><div class="v">229</div><div class="l">communities in the Extreme band</div><div class="s">the top 5 percent of all scored</div></div>
+        <div class="num-item a-fadeUp" style="--d:900ms"><div class="v">9,254</div><div class="l">people, 2021 Census</div><div class="s">up 5.4 percent from 2016; the index carries a 2025 population estimate of 11,093</div></div>
+      </div>
+    </div>
+    <div class="foot a-fadeIn" style="--d:1100ms"><b>Source.</b> Karto Housing Pressure Index, June 2026 release (HelpSeeker computation on public inputs). The Committee saw this score in June; nothing in it has been recomputed since.</div>
+  </div>
+</section>
+
+<!-- 3 WHY: EVERY PILLAR -->
+<section class="slide" data-title="Why">
+  <div class="slide-body">
+    <div class="eyebrow a-fadeDown">Why the score is high</div>
+    <h2 class="a-fadeDown" style="--d:100ms">Not one hot-market factor. Every pillar elevated at once.</h2>
+    <div class="grow">
+      <div class="sl-columns-2-1">
+        <div class="chart-card a-fadeUp" style="--d:250ms">
+          <div class="chart-title"><span class="material-symbols-outlined gi">bar_chart</span><h3>Six pillar scores, 0 to 100 (higher is more pressure)</h3></div>
+          <div class="chart-canvas"><canvas id="pillars" width="900" height="330"></canvas></div>
+        </div>
+        <div class="side-stat a-slideLeft" style="--d:450ms">
+          <div class="v">1.28</div>
+          <div class="l">Commuter inflow ratio</div>
+          <div class="s">More people commute into Smiths Falls to work than residents who work locally. The town is a job magnet inside the Ottawa commuter zone, and the local market is not absorbing that demand.</div>
+          <div class="s" style="margin-top:6px"><b style="color:var(--navy)">In most communities one or two pillars dominate.</b> Here all six sit between 53 and 84. There is no soft spot.</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot a-fadeIn" style="--d:700ms"><b>Source.</b> Karto Housing Pressure Index, June 2026. Pillar scores are percentile ranks across all scored communities. Supply Pressure is the one mid-range pillar: household formation is improving (headship change +0.05) while the commuter inflow keeps demand high.</div>
+  </div>
+</section>
+
+<!-- 4 WHO FEELS IT FIRST -->
+<section class="slide" data-title="Who feels it">
+  <div class="slide-body">
+    <div class="eyebrow a-fadeDown">Who feels it first</div>
+    <h2 class="a-fadeDown" style="--d:100ms">Renters, and the households with the least room to move</h2>
+    <div class="grow">
+      <div class="sl-num-row">
+        <div class="num-item a-fadeUp" style="--d:250ms"><div class="v">45.4%</div><div class="l">of households rent</div><div class="s">a city-like share for a town; owners 54.6 percent</div></div>
+        <div class="num-item a-fadeUp" style="--d:370ms"><div class="v">23.5%</div><div class="l">of renter households in core housing need</div><div class="s">nearly one renting household in four; 13.0 percent of all households; Ontario renters 24.9</div></div>
+        <div class="num-item a-fadeUp" style="--d:490ms"><div class="v">16.4%</div><div class="l">of residents below the low-income line</div><div class="s">LIM-AT, 2020 income; Lanark 8.7, Ontario 10.1; median household income $61,200 against $88,000 in Lanark</div></div>
+        <div class="num-item a-fadeUp" style="--d:610ms"><div class="v">24.9%</div><div class="l">of families are one-parent families</div><div class="s">Lanark 13.7, Ontario 17.1; 26.3 percent of residents are 65 and over</div></div>
+        <div class="num-item a-fadeUp" style="--d:730ms"><div class="v">$770</div><div class="l">affordable rent at half the median income</div><div class="s">against a median rent of about $1,000: half the income distribution cannot afford the median unit</div></div>
+      </div>
+      <div class="sl-columns-2-1" style="margin-top:22px">
+        <div class="chart-card a-fadeUp" style="--d:850ms">
+          <div class="chart-title"><span class="material-symbols-outlined gi">show_chart</span><h3>Core housing need, all households, percent, by census year (2006 to 2016 as carried in the June index)</h3></div>
+          <div class="chart-canvas short"><canvas id="chn" width="900" height="250"></canvas></div>
+        </div>
+        <div class="callout a-slideLeft" style="--d:1000ms;align-self:center"><b>Read the 2021 dip with care.</b> The 2021 Census measured incomes in 2020, when pandemic benefits lifted household incomes for one year. Core housing need fell across Canada that cycle. The 2016 to 2021 drop here is real in the data and may not have lasted.</div>
+      </div>
+    </div>
+    <div class="foot a-fadeIn" style="--d:1200ms"><b>Sources.</b> Statistics Canada, 2021 Census of Population (income year 2020); core housing need series 2006 to 2021 via HART; CMHC. 2021 values re-read at source on 20 October 2026; the 2006 to 2016 series as carried in the June index, not re-read. Bases stated on each card.</div>
+  </div>
+</section>
+
+<!-- 5 WHAT THE TOWN CARRIES -->
+<section class="slide" data-title="What the town carries">
+  <div class="slide-body">
+    <div class="eyebrow a-fadeDown">The Committee's account, tested against the record</div>
+    <h2 class="a-fadeDown" style="--d:100ms">The town carries a share of the County's community housing far above its share of people</h2>
+    <div class="grow">
+      <div class="sl-boxes-icon">
+        <div class="box a-fadeUp" style="--d:250ms"><div class="ib"><span class="material-symbols-outlined gi">apartment</span></div><div class="v">269 of 679</div><div class="t">County social housing units in Smiths Falls, 2018</div><div class="d">39.6 percent of Lanark County's social housing stock, in a town with 13 percent of the County's population; 6.6 units per 100 households against 1.7 in the rest of the County.</div></div>
+        <div class="box a-fadeUp" style="--d:370ms"><div class="ib"><span class="material-symbols-outlined gi">home</span></div><div class="v">17.2%</div><div class="t">of renter households in subsidized housing, 2021</div><div class="d">Lanark 13.2, Ontario 13.7. In 2016 it was 21.4 percent against 15.3 and 15.0. Census, renter households only.</div></div>
+        <div class="box a-fadeUp" style="--d:490ms"><div class="ib"><span class="material-symbols-outlined gi">schedule</span></div><div class="v">5 yrs</div><div class="t">rent-geared-to-income wait, Smiths Falls</div><div class="d">Carleton Place 7, Mississippi Mills 6, Perth 3. County centralized list: 470 applicants at the end of 2025, 50 housed in the year.</div></div>
+        <div class="box a-fadeUp" style="--d:610ms"><div class="ib"><span class="material-symbols-outlined gi">domain_add</span></div><div class="v">34</div><div class="t">new units at 44 Chambers Street, opened April 2024</div><div class="d">28 rent-geared-to-income and 6 affordable, with Carebridge; affordability for 40 years; County and provincial funds.</div></div>
+        <div class="box a-fadeUp" style="--d:730ms"><div class="ib"><span class="material-symbols-outlined gi">night_shelter</span></div><div class="v">13 to 22</div><div class="t">Bridge House beds, 2024 to 2025</div><div class="d">Housing First residence on Armstrong Drive; 33 people housed in 2025.</div></div>
+        <div class="box a-fadeUp" style="--d:850ms"><div class="ib"><span class="material-symbols-outlined gi">account_balance</span></div><div class="v">57 to 112</div><div class="t">households on the County by-name list, January 2025 to January 2026</div><div class="d">Lanark County is the service manager for the County and the Town. In May 2026 its Director put Smiths Falls at about 49 percent of people actively homeless, adding that many are in programs at Bridge House or the HART Hub. The share partly reflects where the programs are.</div></div>
+      </div>
+    </div>
+    <div class="foot a-fadeIn" style="--d:1050ms"><b>Sources.</b> Lanark County Housing and Homelessness Plan 2019 (Tables 14 and 18); County Report Cards 2024 and 2025; County Council highlights, 27 May 2026; By-Name List dashboard; Statistics Canada 2021 Census; Lanark County Community Safety and Well-Being Plan. Each figure sits beside its own base and year.</div>
+  </div>
+</section>
+
+<!-- 6 THE CENTRE -->
+<section class="slide" data-title="The Centre">
+  <div class="slide-body top">
+    <div class="eyebrow a-fadeDown">The Rideau Regional Centre, as far as the record goes</div>
+    <h2 class="a-fadeDown" style="--d:100ms">Fifty-eight years on Highway 15, and a statistical disappearance in 1977</h2>
+    <div class="grow">
+      <div class="sl-seq-vertical">
+        <div class="seq-item a-slideRight" style="--d:250ms"><div class="dot">1</div><div><div class="yr">1951</div><div class="tt">Opens as the "Ontario Hospital School, Smiths Falls"</div><div class="dd">One of 16 provincial institutions in rural settings. Average resident population rose from 863 in 1953 to 2,367 in 1964, the highest year in the published series; 2,070 residents in 1971, the largest of the three that lasted.</div></div></div>
+        <div class="seq-item a-slideLeft" style="--d:350ms"><div class="dot">2</div><div><div class="yr">1971 to 1974</div><div class="tt">The Williston review, then the Developmental Services Act</div><div class="dd">After the death and maltreatment of two men who had lived at Rideau, the province moved developmental services out of Health and committed to community alternatives.</div></div></div>
+        <div class="seq-item a-slideRight" style="--d:450ms"><div class="dot">3</div><div><div class="yr">1976</div><div class="tt">Last appearance in the national series</div><div class="dd">Statistics Canada's directory lists Rideau at 1,128 beds, 1,395.6 average inpatients, 123.7 percent occupancy.</div></div></div>
+        <div class="seq-item a-slideLeft" style="--d:550ms"><div class="dot">4</div><div><div class="yr">1977</div><div class="tt">42 facilities and 14,000 beds reclassified out of the count</div><div class="dd">The national series fell 17,558 beds, 43.8 percent, in one year. The 1976 table counts exactly 42 public hospitals of this type, 28 of them in Ontario, and the 1976 directory names Rideau among them. None of the 42 appears in 1977.</div></div></div>
+        <div class="seq-item a-slideRight" style="--d:650ms"><div class="dot">5</div><div><div class="yr">2004 to 2009</div><div class="tt">Closure announced; closed 31 March 2009</div><div class="dd">With Huronia and Southwestern. 435 residents at Rideau when closure was announced; about 1,000 moved out of the three centres over five years at a provincial cost of $276 million; average age 51, about 39 years in institutions. The Town's own 2020 housing report says the Centre employed more than 830 people, against Hershey's 550 at its peak.</div></div></div>
+        <div class="seq-item a-slideLeft" style="--d:750ms"><div class="dot">6</div><div><div class="yr">2013 to 2014</div><div class="tt">Settlement and apology</div><div class="dd">$32.7 million ($20.6 million for Rideau), approved 24 February 2014, for about 2,750 former Rideau residents and 1,600 from Southwestern; individual awards from up to $2,000 to a maximum of $42,000; the Premier's written apology to Rideau and Southwestern residents on 17 April 2014.</div></div></div>
+      </div>
+    </div>
+    <div class="foot a-fadeIn" style="--d:950ms"><b>Sources.</b> Ontario Ministry of Community and Social Services bulletin, April 2009; Estimates committee transcript, 16 May 2006; Statistics Canada catalogue 83-205, 1976 and 1977 editions; Developmental Services Act, 1974; Canadian Journal of Disability Studies; class counsel's case page; Town of Smiths Falls Housing Report 2020 (employment). Settlement figures are aggregates only.</div>
+  </div>
+</section>
+
+<!-- 7 THE MAP -->
+<section class="slide" data-title="The map" style="padding:0">
+  <div class="map-wrap">
+    <iframe id="mapFrame" title="Where the institutions stood: Canadian custodial institutions, 1717 to 2025" loading="lazy"></iframe>
+    <div class="map-fallback"></div>
+  </div>
+  <div class="map-cap"><span><b>Where the institutions stood.</b> 122 documented Canadian custodial institutions, 1717 to 2025, each with its sources and a confidence grade. Smiths Falls is the blue dot east of Kingston: closed in 2009, the site now repurposed. Open data: github.com/Alinuta89/canada-deinstitutionalization</span></div>
+</section>
+
+<!-- 8 CAN AND CANNOT SAY -->
+<section class="slide" data-title="What the record can say">
+  <div class="slide-body">
+    <div class="eyebrow a-fadeDown">Your question, and the honest state of the evidence</div>
+    <h2 class="a-fadeDown" style="--d:100ms">What the record can say, and what it cannot</h2>
+    <div class="grow">
+      <div class="sl-columns-2equal">
+        <div class="cmp a-slideRight" style="--d:250ms">
+          <h3><span class="material-symbols-outlined gi">check_circle</span>It can say</h3>
+          <ul>
+            <li><span class="material-symbols-outlined md">circle</span><span><b>How large the Centre was</b> and in what category: 1,128 beds in 1976; 2,070 residents in 1971; one of three that lasted to 2009; the town's largest employer by the Town's own account.</span></li>
+            <li><span class="material-symbols-outlined md">circle</span><span><b>That the national count dropped its whole category in 1977</b>, so the years the institutions emptied are the years the country stopped counting the beds.</span></li>
+            <li><span class="material-symbols-outlined md">circle</span><span><b>That the town carries 39.6 percent of the County's social housing</b> with 13 percent of its people (2018), which is consistent with the Committee's account of a welcoming town.</span></li>
+            <li><span class="material-symbols-outlined md">circle</span><span><b>That the town is pressured on every pillar</b>, with renters and low-income households first in line.</span></li>
+          </ul>
+        </div>
+        <div class="cmp a-slideLeft" style="--d:400ms">
+          <h3><span class="material-symbols-outlined gi">help</span>It cannot yet say</h3>
+          <ul>
+            <li><span class="material-symbols-outlined md">circle</span><span><b>The list of the 42, as a list.</b> Statistics Canada never printed it. The 1976 directory names 42 facilities of the type, Rideau among them, and the 1977 directory names none, so the set is reconstructible, not published.</span></li>
+            <li><span class="material-symbols-outlined md">circle</span><span><b>Where the people went.</b> The province reports about 1,000 moved out of the three facilities, 2004 to 2009, "close to their families and friends wherever possible", through about 80 agencies. No placement count by municipality is published; the ministry's own evaluation reports hold location data and are not public.</span></li>
+            <li><span class="material-symbols-outlined md">circle</span><span><b>Whether the Centre's wind-down shaped today's population or housing.</b> No study has tested that for any Canadian town of this size. The nearest case, Tranquille in Kamloops, is a 1983 plan to place about 80 of some 300 residents locally, about one in four; no count after closure exists.</span></li>
+            <li><span class="material-symbols-outlined md">circle</span><span><b>Any town-only homelessness count.</b> The County's by-name list is County-wide; the Town's share is not published.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot a-fadeIn" style="--d:650ms"><b>Plain reading.</b> The Committee's explanation is plausible and local. The published evidence neither confirms nor refutes it. That is a gap in the record, not a verdict on the town.</div>
+  </div>
+</section>
+
+<!-- 9 THE ASK BACK -->
+<section class="slide" data-title="What would answer it">
+  <div class="slide-body top">
+    <div class="eyebrow a-fadeDown">What would answer the Committee's question</div>
+    <h2 class="a-fadeDown" style="--d:100ms">The records that would close the gap are mostly local</h2>
+    <div class="grow">
+      <div class="sl-bullets-description">
+        <div class="desc a-fadeUp" style="--d:250ms"><div class="ib"><span class="material-symbols-outlined gi">folder_open</span></div><div><div class="t">Centre records, 1951 to 2009</div><div class="d">Annual reports, resident counts by year, staffing and payroll. Provincial archives hold some; the town and former staff may hold more.</div></div></div>
+        <div class="desc a-fadeUp" style="--d:370ms"><div class="ib"><span class="material-symbols-outlined gi">list_alt</span></div><div><div class="t">Placement records, 2004 to 2009</div><div class="d">Which agencies received residents and where they were housed, as aggregates by municipality. Developmental Services Ontario and the community living agencies hold these.</div></div></div>
+        <div class="desc a-fadeUp" style="--d:490ms"><div class="ib"><span class="material-symbols-outlined gi">history</span></div><div><div class="t">Housing waitlist histories</div><div class="d">County and Town waiting-list and social-housing stock by year, so the 39.6 percent share can be followed back before 2018.</div></div></div>
+        <div class="desc a-fadeUp" style="--d:610ms"><div class="ib"><span class="material-symbols-outlined gi">groups</span></div><div><div class="t">The Committee's own memory</div><div class="d">Who stayed, which services grew up around the Centre, and when. Most communities no longer have this. Yours does.</div></div></div>
+        <div class="desc a-fadeUp" style="--d:730ms"><div class="ib"><span class="material-symbols-outlined gi">description</span></div><div><div class="t">What comes next from me</div><div class="d">A written brief for the Committee in November with every figure sourced; the open dataset and map, already public; the academic paper this fall.</div></div></div>
+        <div class="desc a-fadeUp" style="--d:850ms"><div class="ib"><span class="material-symbols-outlined gi">insights</span></div><div><div class="t">The Committee's own recommendation</div><div class="d">A poverty reduction strategy for the next Council, built when the next census data arrives (your September minute). The pressure profile on slide 3 is a starting baseline for it.</div></div></div>
+      </div>
+    </div>
+    <div class="foot a-fadeIn" style="--d:1050ms">I would be glad to come back and present the full findings in Smiths Falls when they are ready.</div>
+  </div>
+</section>
+
+<!-- 10 THANK YOU AND SOURCES -->
+<section class="slide dark" data-title="Thank you">
+  <div class="slide-orb slide-orb-1"></div><div class="slide-orb slide-orb-2"></div>
+  <div class="slide-body">
+    <div class="eyebrow a-fadeDown">Thank you</div>
+    <h1 class="a-landUp" style="--d:150ms">It is not often a community explains a researcher's data back to her, and is right.</h1>
+    <p class="lede a-fadeUp" style="--d:350ms;margin-top:16px">Dr. Alina Turner · Co-Founder &amp; CEO, HelpSeeker Technologies &amp; Fellow, School of Public Policy, University of Calgary</p>
+    <div class="grow"></div>
+    <details class="drawer a-fadeIn" style="--d:550ms">
+      <summary><span class="material-symbols-outlined" style="color:var(--aqua);font-size:20px">menu_book</span>Sources and vintages (click to open)</summary>
+      <div class="db">
+        <p><b>Housing Pressure Index.</b> Karto HPI, June 2026 release, HelpSeeker Technologies; 25 indicators from HART (UBC), CMHC Rental Market Survey, Statistics Canada 2021 Census and population estimates; percentile-rank composite over 4,533 census subdivisions; Extreme band 229. Smiths Falls community brief and session, 22 to 24 June 2026.</p>
+        <p><b>Census.</b> Statistics Canada, Census Profile 2021 (SDMX web service, CSD 3509004; income reference year 2020, pandemic benefits received by 23.4 percent of residents 15 and over), re-read 20 October 2026; 2006 to 2016 core housing need as carried by HART in the June index (not re-read).</p>
+        <p><b>Lanark County.</b> Housing and Homelessness Plan 2019 (Tables 14, 18: 269 of 679 units); Housing and Homelessness Report Cards 2024 and 2025; County Council highlights 27 May 2026 (57 to 112 households; the Director's 49 percent and caveat); By-Name List dashboard, August 2026 (132 households, 168 people); County housing page (RGI wait times); Community Safety and Well-Being Plan. CMHC's Rental Market Survey does not cover Smiths Falls. Lanark County is the Consolidated Municipal Service Manager for the County and the Town.</p>
+        <p><b>Statistics Canada, catalogue 83-205.</b> Mental health statistics, Volume III, institutional facilities, services and finances, 1976 and 1977 editions (publications.gc.ca, CS83-205-1976 and CS83-205-1977). The 1977 edition (printed page 6) reports the reclassification of 42 "public hospitals for retardates" (more than 14,000 beds) to special care facilities and a fall of 17,558 rated beds, 43.8 percent. The 1976 edition, Table 11, counts 42 such hospitals with 14,191 beds (Ontario 28, 7,677 beds); its Directory A, printed page 53, lists Rideau at 1,128 beds and 1,395.6 average inpatients. Catalogue 83-201 carries Rideau by name as a special care facility from 1979 to 1988.</p>
+        <p><b>Ontario.</b> Developmental Services Act, 1974; Ministry of Community and Social Services bulletin, April 2009 (closure, 1,000 moved, $276 million, average age and tenure); Standing Committee on Estimates transcript, 16 May 2006; Legislative Assembly Hansard, 9 December 2013.</p>
+        <p><b>Literature.</b> Rossiter and Clarkson 2013, CJDS 2(3), doi 10.15353/cjds.v2i3.99 (Williston review, certification dates); Journal on Developmental Disabilities 21(2), 2015, Facilities Initiative studies (941 people placed through about 80 agencies; family survey n=61); Purvey, Small Cities, Big Issues (AU Press) and BC Hansard 18 August 1983 pp. 916 to 917 (Tranquille, Kamloops); Dear and Wolch 1987, Landscapes of Despair, ch. 5; Jinha 2009, Just Labour 14 (employment).</p>
+        <p><b>Settlement.</b> Rideau and Southwestern class actions, 2014 ONSC 1282 (approval order 24 February 2014): $20,619,000 for Rideau and $12,081,000 for Southwestern; about 2,750 and 1,600 former residents alive at the cut-off dates; Section A awards up to $2,000, top Section B award $35,000, maximum $42,000 after a top-up. Premier's written apology, Ontario Newsroom, 17 April 2014. Designating regulation R.R.O. 1990, Reg. 272, Sched. 1 item 9. Closure: MCSS release, 31 March 2009. Employment: the Town's 2020 Housing Report (more than 830) and a member's statement in Hansard, 1 May 2006 (840).</p>
+        <p><b>Dataset and map.</b> Canadian custodial institutions, 1717 to 2025, 122 institutions, 358 sources, confidence-graded; github.com/Alinuta89/canada-deinstitutionalization. The Rideau row is being re-read at primary sources for the written brief.</p>
+      </div>
+    </details>
+    <div class="foot a-fadeIn" style="--d:700ms">Draft prepared 20 October 2026. Nothing Indigenous-specific is authored or scored in this deck. Former residents appear only as aggregates. The written brief, with a sealed review of every figure, follows in November.</div>
+  </div>
+</section>
+
+</div></div>
+
+<div id="dots"></div>
+<div id="nav"><button id="prev">Back</button><span class="idx" id="idx">1 / 10</span><button id="next">Next</button></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" integrity="sha384-y49Zu59jZHJL/PLKgZPv3k2WI9c0Yp3pWB76V8OBVCb0QBKS8l4Ff3YslzHVX76Y" crossorigin="anonymous"></script>
+<script>
+(function(){
+  // ---- stage scaling ----
+  var frame=document.getElementById('frame');
+  function fit(){var s=Math.min(window.innerWidth/1440,window.innerHeight/810)*0.98;frame.style.transform='scale('+s+')';}
+  window.addEventListener('resize',fit);fit();
+
+  // ---- slides ----
+  var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var dots=document.getElementById('dots'),idx=document.getElementById('idx'),cur=0;
+  slides.forEach(function(s,i){var d=document.createElement('i');d.addEventListener('click',function(){go(i)});dots.appendChild(d);});
+  var mapLoaded=false;
+  function go(i){
+    if(i<0||i>=slides.length)return;
+    var leaving=slides[cur],entering=slides[i];
+    leaving.classList.remove('active','slide-entered');
+    var lc=leaving.querySelector('.mercury-canvas');if(lc&&lc._mercury)lc._mercury.stop();
+    cur=i;entering.classList.add('active');
+    setTimeout(function(){entering.classList.add('slide-entered');},50);
+    var ec=entering.querySelector('.mercury-canvas');if(ec&&ec._mercury)ec._mercury.start();
+    Array.prototype.forEach.call(dots.children,function(d,k){d.className=k===i?'on':'';});
+    idx.textContent=(i+1)+' / '+slides.length;
+    if(entering.querySelector('#heroScore'))countHero();
+    if(entering.querySelector('#mapFrame')&&!mapLoaded){document.getElementById('mapFrame').src='map-helpseeker.html';mapLoaded=true;}
+    if(entering.querySelector('canvas[id="pillars"]')||entering.querySelector('canvas[id="chn"]'))setTimeout(drawCharts,60);
+    try{location.hash='s'+(i+1);}catch(e){}
+  }
+  document.getElementById('prev').addEventListener('click',function(){go(cur-1)});
+  document.getElementById('next').addEventListener('click',function(){go(cur+1)});
+  document.addEventListener('keydown',function(e){
+    if(e.target&&e.target.tagName==='IFRAME')return;
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(cur+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(cur-1);}
+    else if(e.key==='Home'){go(0);}else if(e.key==='End'){go(slides.length-1);}
+    else if(e.key==='a'){document.body.classList.toggle('skip-animations');}
+    else if(e.key==='f'){var el=document.documentElement;if(!document.fullscreenElement&&el.requestFullscreen)el.requestFullscreen();else if(document.exitFullscreen)document.exitFullscreen();}
+  });
+  frame.addEventListener('click',function(e){
+    if(e.target.closest('details,summary,a,button,iframe,canvas'))return;
+    var r=frame.getBoundingClientRect();if(e.clientX-r.left>r.width*0.5)go(cur+1);else go(cur-1);
+  });
+
+  // ---- hero counter ----
+  function countHero(){
+    var el=document.getElementById('heroScore');if(!el)return;
+    var target=parseFloat(el.getAttribute('data-target')),start=null;
+    function tick(now){if(!start)start=now;var p=Math.min((now-start)/1200,1);var e=1-Math.pow(1-p,3);el.textContent=(target*e).toFixed(1);if(p<1)requestAnimationFrame(tick);}
+    if(document.body.classList.contains('skip-animations')){el.textContent=target.toFixed(1);return;}
+    setTimeout(function(){requestAnimationFrame(tick);},250);
+  }
+
+  // ---- mercury canvas ----
+  var canvases=document.querySelectorAll('.mercury-canvas');
+  canvases.forEach(function(canvas){
+    var W=720,H=405;canvas.width=W;canvas.height=H;var ctx=canvas.getContext('2d');var blobs=[];
+    for(var i=0;i<5;i++){blobs.push({x:W*(0.3+Math.random()*0.4),y:H*(0.25+Math.random()*0.5),r:60+Math.random()*50,sx:0.0003+Math.random()*0.0004,sy:0.0002+Math.random()*0.0003,ox:Math.random()*6000,oy:Math.random()*6000,dx:W*(0.15+Math.random()*0.12),dy:H*(0.1+Math.random()*0.1)});}
+    var raf=null,running=false;
+    function render(now){if(!running)return;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
+      for(var i=0;i<blobs.length;i++){var b=blobs[i];var bx=b.x+Math.sin(now*b.sx+b.ox)*b.dx,by=b.y+Math.cos(now*b.sy+b.oy)*b.dy,br=b.r+Math.sin(now*0.0002+i)*12;var g=ctx.createRadialGradient(bx,by,0,bx,by,br);g.addColorStop(0,'rgba(15,185,177,0.6)');g.addColorStop(0.3,'rgba(30,58,95,0.35)');g.addColorStop(0.6,'rgba(16,42,67,0.15)');g.addColorStop(1,'rgba(11,31,51,0)');ctx.beginPath();ctx.arc(bx,by,br,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();}
+      ctx.globalCompositeOperation='screen';
+      for(var j=0;j<blobs.length;j++){var c=blobs[j];var cx=c.x+Math.sin(now*c.sx+c.ox)*c.dx,cy=c.y+Math.cos(now*c.sy+c.oy)*c.dy,cr=c.r*0.4;var g2=ctx.createRadialGradient(cx,cy,0,cx,cy,cr);g2.addColorStop(0,'rgba(79,209,197,0.25)');g2.addColorStop(1,'rgba(79,209,197,0)');ctx.beginPath();ctx.arc(cx,cy,cr,0,Math.PI*2);ctx.fillStyle=g2;ctx.fill();}
+      ctx.globalCompositeOperation='source-over';raf=requestAnimationFrame(render);}
+    canvas._mercury={start:function(){if(!running){running=true;raf=requestAnimationFrame(render);}},stop:function(){running=false;if(raf)cancelAnimationFrame(raf);}};
+  });
+
+  // ---- charts ----
+  var drawn={};
+  function chartValue(ctx){if(ctx&&ctx.parsed&&typeof ctx.parsed.x==='number')return ctx.parsed.x;if(ctx&&ctx.parsed&&typeof ctx.parsed.y==='number')return ctx.parsed.y;if(ctx&&typeof ctx.raw==='number')return ctx.raw;return 0;}
+  function drawCharts(){
+    if(typeof Chart==='undefined')return;
+    Chart.defaults.font.family="'Lato', Arial, sans-serif";Chart.defaults.font.weight=400;Chart.defaults.color='#4A5568';
+    Chart.defaults.plugins.legend.onClick=function(){};
+    if(typeof ChartDataLabels!=='undefined')Chart.register(ChartDataLabels);
+    var p=document.getElementById('pillars');
+    if(p&&!drawn.pillars&&p.offsetParent!==null){drawn.pillars=true;
+      new Chart(p.getContext('2d'),{type:'bar',data:{labels:['Who is affected','Affordability gap (core housing need)','Housing cost','Rental stress','Income risk','Supply pressure'],datasets:[{label:'Smiths Falls pillar score',data:[84,78,75,75,72,53],backgroundColor:'#1E3A5F',borderRadius:4,barThickness:30}]},
+        options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:{duration:900,easing:'easeOutCubic'},
+          plugins:{legend:{position:'top',align:'end',labels:{boxWidth:10,boxHeight:10,padding:14,font:{size:11,weight:700}},onClick:function(){}},
+            datalabels:{color:'#FFFFFF',font:{weight:700,size:12},anchor:'end',align:'start',offset:8,formatter:function(v){return v;}},
+            tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+chartValue(c)+' of 100';}}}},
+          scales:{x:{min:0,max:100,grid:{display:false},ticks:{display:false}},y:{grid:{display:false},ticks:{font:{size:12.5,weight:700},color:'#0B1F33'}}}}});}
+    var c=document.getElementById('chn');
+    if(c&&!drawn.chn&&c.offsetParent!==null){drawn.chn=true;
+      new Chart(c.getContext('2d'),{type:'bar',data:{labels:['2006','2011','2016','2021'],datasets:[{label:'Core housing need, percent of households',data:[16.3,15.7,21.0,13.0],backgroundColor:['#1E3A5F','#1E3A5F','#1E3A5F','#0FB9B1'],borderRadius:4,barThickness:56}]},
+        options:{responsive:true,maintainAspectRatio:false,animation:{duration:900,easing:'easeOutCubic'},
+          plugins:{legend:{position:'top',align:'end',labels:{boxWidth:10,boxHeight:10,padding:14,font:{size:11,weight:700}},onClick:function(){}},
+            datalabels:{color:'#FFFFFF',font:{weight:700,size:12},anchor:'end',align:'start',offset:6,formatter:function(v){return v.toFixed(1)+'%';}},
+            tooltip:{callbacks:{label:function(x){return chartValue(x).toFixed(1)+' percent of households';}}}},
+          scales:{x:{grid:{display:false},ticks:{font:{size:12,weight:700},color:'#0B1F33'}},y:{min:0,max:25,grid:{display:false},ticks:{display:false}}}}});}
+  }
+
+  window.addEventListener('hashchange',function(){var n=parseInt((location.hash||'').replace('#s',''),10);if(!isNaN(n)&&n-1!==cur)go(n-1);});
+  // ---- start ----
+  var h=parseInt((location.hash||'').replace('#s',''),10);
+  go(isNaN(h)?0:Math.max(0,Math.min(slides.length-1,h-1)));
+})();
+</script>
+</body>
+</html>
